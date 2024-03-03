@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Info</title>
+
+    <style>
+        body {
+            background-image: url('/static/6.jpg');
+            background-size: cover;
+            text-align: center;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        a:link,
+        a:visited {
+            background-color: #f44336;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover,
+        a:active {
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 style="color: green">Student Details</h1><br>
+
+    <form action="/student_info" method="get">
+
+        <table align="center" cellspacing="2" cellpadding="13" border="10" width="700">
+
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Gender</td>
+                    <td>Contact</td>
+                    <td>D.O.B</td>
+                    <td>Address</td>
+                </tr>
+            </thead>
+
+            {% for row in rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+    <br><br>
+    <a href="/">Go back to the home page</a>
+
+</body>
+
+</html>
